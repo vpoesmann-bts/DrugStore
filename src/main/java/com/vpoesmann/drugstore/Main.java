@@ -74,7 +74,7 @@ public class Main {
         }
         
         if (c.isDead()) {
-            System.err.println("Le client est mort, fin de la simulation !");
+            System.out.println("Le client est mort, fin de la simulation !");
         }
     }
     

@@ -102,7 +102,13 @@ public class Customer {
         return result;
     }
 
-    public void nextTurn() {       
+    public void nextTurn() {   
+        mp += 5;
+        
+        if (mp > maxMp) {
+            mp = maxMp;
+        }
+        
         int i = 0;
         while (i < effects.size()) {
             Effect e = effects.get(i);
