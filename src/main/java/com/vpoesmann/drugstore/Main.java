@@ -32,6 +32,7 @@ public class Main {
         
         while(!left) {
             
+            printStatus(c);
             printMenu();
             
             int choix;
@@ -55,7 +56,14 @@ public class Main {
                     s.buy(choix - 1, c);
                     break;
                 case 2:
-                    
+                    printInventory(c);
+                    try {
+                        choix = askForNumber(1, c.getInventorySize());
+                    } catch (BadChoiceException e) {
+                        System.out.println("Choix non reconnu");
+                        continue;
+                    }
+                    c.useItem(choix - 1);
                     break;
                 case 3:
                     
@@ -80,6 +88,20 @@ public class Main {
         int i = 1;
         for(Consumable co : s.getItems()) {
             System.out.println(String.format(Locale.FRANCE, "%d. %s", i, co.toString()));
+            i++;
+        }
+    }
+    
+    public static void printStatus(Customer c) {
+        System.out.println(c.toString());
+    }
+    
+    public static void printInventory(Customer c) {
+        System.out.println(inventoryMsg);
+        int i = 1;
+        for(Consumable co : c.getInventory()) {
+            System.out.println(String.format(Locale.FRANCE, "%d. %s", i, co.getName()));
+            i++;
         }
     }
     

@@ -9,6 +9,7 @@ import com.vpoesmann.drugstore.consumable.Consumable;
 import com.vpoesmann.drugstore.effect.Effect;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  *
@@ -29,6 +30,7 @@ public class Customer {
     public Customer() {
         gold = 500;
         inventory = new ArrayList<>();
+        effects = new ArrayList<>();
         
         maxHp = 100;
         maxMp = 100;
@@ -57,5 +59,35 @@ public class Customer {
     
     public void addToInventory(Consumable c) {
         inventory.add(c);
+    }
+    
+    public List<Consumable> getInventory() {
+        return inventory;
+    }
+    
+    public int getInventorySize() {
+        return inventory.size();
+    }
+    
+    public void useItem(int itemId) {
+        Consumable c = inventory.get(itemId);
+        
+        try {
+            c.use(this);
+            inventory.remove(itemId);
+        } catch (CannotConsumeException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public String toString() {
+        String result = String.format(Locale.FRANCE, "HP : %d/%d\nMP : %d/%d\n", hp, maxHp, mp, maxMp);
+        
+        for (Effect e : effects) {
+            result += e;
+            result += "\n";
+        }
+        
+        return result;
     }
 }

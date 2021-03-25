@@ -5,6 +5,7 @@
  */
 package com.vpoesmann.drugstore.consumable;
 
+import com.vpoesmann.drugstore.CannotConsumeException;
 import com.vpoesmann.drugstore.Customer;
 import java.util.Locale;
 
@@ -21,7 +22,7 @@ public abstract class Consumable {
         this.name = name;
     }
     
-    public abstract boolean use(Customer c);
+    public abstract void use(Customer c) throws CannotConsumeException;
     
     public int getPrice() {
         return price;

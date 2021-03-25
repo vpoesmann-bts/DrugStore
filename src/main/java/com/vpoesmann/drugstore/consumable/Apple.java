@@ -5,6 +5,7 @@
  */
 package com.vpoesmann.drugstore.consumable;
 
+import com.vpoesmann.drugstore.CannotConsumeException;
 import com.vpoesmann.drugstore.Customer;
 
 /**
@@ -19,12 +20,11 @@ public class Apple extends Consumable {
     }
     
     @Override
-    public boolean use(Customer c) {
+    public void use(Customer c) throws CannotConsumeException {
         if (c.hasFullHP()) {
-            return false;
+            throw new CannotConsumeException("Santé déjà au maximum");
         }
         
         c.heal(HEAL_AMOUNT);
-        return true;
     }
 }
