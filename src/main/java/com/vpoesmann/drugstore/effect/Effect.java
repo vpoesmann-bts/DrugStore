@@ -29,6 +29,10 @@ public abstract class Effect {
         return name;
     }
     
+    public boolean isStillRunning() {
+        return nbTurns > 0;
+    }
+    
     public abstract void apply(Customer c);
     
     public String toString() {

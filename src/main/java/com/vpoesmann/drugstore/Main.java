@@ -30,7 +30,7 @@ public class Main {
         
         boolean left = false;
         
-        while(!left) {
+        while(!left && !c.isDead()) {
             
             printStatus(c);
             printMenu();
@@ -66,11 +66,15 @@ public class Main {
                     c.useItem(choix - 1);
                     break;
                 case 3:
-                    
+                    c.nextTurn();
                     break;
                 case 4:
                     left = true;
             }
+        }
+        
+        if (c.isDead()) {
+            System.err.println("Le client est mort, fin de la simulation !");
         }
     }
     

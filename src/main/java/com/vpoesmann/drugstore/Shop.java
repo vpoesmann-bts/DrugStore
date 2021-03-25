@@ -7,6 +7,7 @@ package com.vpoesmann.drugstore;
 
 import com.vpoesmann.drugstore.consumable.Apple;
 import com.vpoesmann.drugstore.consumable.Consumable;
+import com.vpoesmann.drugstore.consumable.PoisonVial;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class Shop {
     public Shop() {
         items = new ArrayList<>();
         items.add(new Apple());
+        items.add(new PoisonVial());
         
     }
 
