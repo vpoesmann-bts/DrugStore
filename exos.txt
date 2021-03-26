@@ -1,0 +1,50 @@
+-Ajouter un consommable Banana qui coûte 10g.
+--Soigne de 25 hp
+--Ne peut pas être consommé si l'utilisateur a toute sa vie.
+
+-Ajouter un consommable RawChicken qui coûte 25g.
+--Occasionne 25 dégâts
+--Applique un effet Poison durant 4 tours
+
+-Ajouter un effet Regeneration qui rend 10 hp par tour
+
+-Ajouter un consommable LifePotion qui coûte 30g.
+--Soigne de 50 hp
+--Applique un effet Regeneration durant 5 tours
+--Ne peut pas être consommé si l'utilisateur a toute sa vie.
+
+-Ajouter un effet Silence qui baisse les mp à 0
+
+-Ajouter un consommable MagicPotion qui coûte 15g.
+--Rend 50 mp
+--Ne peut pas être consommé si l'utilisateur a toute sa vie.
+--Ne peut pas être consommé si l'utilisateur est sous un effet Silence
+
+-Ajouter un consommable Antidote qui coûte 50g.
+--Retire tous les effets Poison
+--Ne peut pas être consommé si l'utilisateur n'a pas d'effet Poison
+
+-Ajouter un consommable Remedy qui coûte 20g.
+--Retire tous les effets Silence
+--Ne peut pas être consommé si l'utilisateur n'a pas d'effet Silence
+
+-Ajouter une nouvelle stat : hunger
+--Démarre à maxHunger = 100
+--Diminue de 5 par tour de jeu, jusqu'au minimum de 0
+--Soigne l'utilisateur de 2 par tour de jeu si supérieur à 80
+--Occasionne 5 dégâts par tour si égal à 0
+
+-Ajouter aux consommables suivants :
+--Apple remplit la hunger de 5
+--Banana remplit la hunger de 10
+--RawChicken remplit la hunger de 20
+--Ne peuvent pas être consommés si l'utilisateur a toute sa hunger
+
+-Créer une classe abstraite NegativeEffect
+--Faire hériter NegativeEffect de Effect
+--Faire hériter Poison de NegativeEffect
+--Faire hériter Silence de NegativeEffect
+
+-Ajouter un consommable MiraclePotion qui coûte 100g.
+--Retire tous les effets négatifs
+--Ne peut pas être consommé si l'utilisateur n'a pas d'effet négatif

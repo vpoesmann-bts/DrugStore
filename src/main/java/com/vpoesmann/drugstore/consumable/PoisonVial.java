@@ -14,6 +14,7 @@ import com.vpoesmann.drugstore.effect.Poison;
  * @author sogeking
  */
 public class PoisonVial extends Consumable {
+    private static final int DURATION = 5;
 
     public PoisonVial() {
         super(20, "Poison vial");
@@ -21,7 +22,7 @@ public class PoisonVial extends Consumable {
     
     @Override
     public void use(Customer c) throws CannotConsumeException {
-        c.addEffect(new Poison(5));
+        c.addEffect(new Poison(DURATION));
     }
     
 }
