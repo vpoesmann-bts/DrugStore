@@ -20,7 +20,7 @@
 
 -Ajouter un consommable MagicPotion qui coûte 15g.
 --Rend 50 mp
---Ne peut pas être consommé si l'utilisateur a toute sa vie.
+--Ne peut pas être consommé si l'utilisateur a tous ses MP 
 --Ne peut pas être consommé si l'utilisateur est sous un effet Silence
 
 -Ajouter un consommable Antidote qui coûte 50g.
@@ -41,7 +41,7 @@
 --Apple remplit la hunger de 5
 --Banana remplit la hunger de 10
 --RawChicken remplit la hunger de 20
---Ne peuvent pas être consommés si l'utilisateur a toute sa hunger
+--Ne peuvent pas être consommés si l'utilisateur a toute sa hunger ET toute sa vie
 
 -Créer une classe abstraite NegativeEffect
 --Faire hériter NegativeEffect de Effect
