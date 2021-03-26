@@ -15,6 +15,9 @@
 
 -Ajouter un effet Silence qui baisse les mp à 0
 
+-Ajouter un consommable SilencePotion qui coûte 10g.
+--Applique un effet Silence durant 5 tours
+
 -Ajouter un consommable MagicPotion qui coûte 15g.
 --Rend 50 mp
 --Ne peut pas être consommé si l'utilisateur a toute sa vie.
